@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -17,10 +18,16 @@ public class UserServiceTest {
     @Test
     public void testCreateUser() throws Exception {
     	System.out.println("test create user");
-    	User user1 = new User(15, "test","test","test");
+    	User user1 = new User("15", "test","test","test");
     	System.out.println(user1);
     	User user2 = new User();
     	user2 = userService.createUser(user1);
     	System.out.println(user2);
     }
+
+    @Test
+    public void testGetUser() throws Exception {
+    	List<User> listUser = userService.getUser();
+    }
+
 }
